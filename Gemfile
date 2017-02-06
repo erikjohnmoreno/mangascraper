@@ -45,8 +45,6 @@ gem 'rubyzip', '~> 1.2'
 gem 'sidekiq'
 gem 'kaminari'
 
-gem 'thin'
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
