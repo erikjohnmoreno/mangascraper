@@ -1,0 +1,42 @@
+.container
+  .row
+    .col-md-12
+      .panel.panel-primary
+        .panel-heading
+          span Add Manga
+        .panel-body
+          = form_for :manga, :url => mangas_path do |f|
+            fieldset
+              label.col-sm-3 Title:
+              label.col-sm-7 Url:
+              .col-sm-3
+                = f.text_field :title, class: 'form-control'
+              .col-sm-7
+                = f.text_field :url, class: 'form-control'
+              .col-sm-2
+                = f.submit 'Add', class: 'btn btn-success btn-lg'
+
+    .col-md-12
+      .panel.panel-primary
+        .panel-heading
+          span Manga List
+        .panel-body
+          ul.list-group
+            - @mangas.each do |manga|
+              li.list-group-item
+                = link_to manga.title, manga_path(manga)
+                .pull-right.action-buttons
+                  = link_to manga.url do
+                    span.glyphicon.glyphicon-eye-open
+                  |&nbsp&nbsp&nbsp&nbsp
+                  = link_to edit_manga_path(manga) do
+                    span.glyphicon.glyphicon-pencil
+                  |&nbsp&nbsp&nbsp&nbsp
+                  = link_to manga_path(manga), :method => :delete, data: {confirm: 'Are you sure?' } do
+                    span.glyphicon.glyphicon-trash
+        .panel-footer
+          .row
+            .col-md-9
+              h6 = page_entries_info @mangas
+            .col-md-3.pull-right
+              = paginate @mangas

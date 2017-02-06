@@ -1,0 +1,17 @@
+.container
+  .row
+    .col-md-12
+      .panel.panel-primary
+        .panel-heading
+          span Add Manga
+        .panel-body
+          = form_for @manga, :url => manga_path(@manga), method: :patch do |f|
+            fieldset
+              label.col-sm-3 Title:
+              label.col-sm-7 Url:
+              .col-sm-3
+                = f.text_field :title, class: 'form-control'
+              .col-sm-7
+                = f.text_field :url, class: 'form-control'
+              .col-sm-2
+                = f.submit 'Edit', class: 'btn btn-success btn-lg'

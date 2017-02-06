@@ -1,0 +1,87 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('/assets/glyphicons-halflings-regular.eot');
+    src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+       url('/assets/glyphicons-halflings-regular.woff') format('woff'),
+       url('/assets/glyphicons-halflings-regular.ttf') format('truetype'),
+       url('/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+ }
+ .pagination a, .pagination span.current, .pagination span.gap {
+    float: left;
+    padding: 0 14px;
+    line-height: 38px;
+    text-decoration: none;
+    background-color: white;
+    border: 1px solid #DDD;
+    border-left-width: 0;
+}
+
+.pagination {
+    border-left: 1px solid #ddd;
+    .first{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .prev {
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .page{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .next{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+    .last{
+        padding : 0;
+        float: none;
+        border: none;
+    }
+}
+
+body{
+    background:url('');
+    padding:50px;
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.btn-theme{
+  color: #ffffff;
+  background-color: #101010;
+  border-color: #101010;
+}
+
+.panel{
+  opacity: 0.9
+}
+
+.panel-primary{
+  border-color: #4A4646;
+}
+
+.panel-primary>.panel-heading{
+  background-color: #4A4646;
+  border-color: #4A4646;
+}

@@ -1,0 +1,15 @@
+.container
+  .row
+    .col-md-12
+      .panel.panel-primary
+        .panel-heading
+          span = @manga.title
+        .panel-body
+          ul.list-group
+            - @elements.each do |element|
+              - if element != ""
+                li.list-group-item
+                  - if element.include?('Volume')
+                    label.strong = element
+                  - else
+                    = link_to element[0], view_mangas_path(:chapter_name => @manga.title, :url => element[1], :manga_id => @manga.id), method: :post

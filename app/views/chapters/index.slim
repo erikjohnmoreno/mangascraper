@@ -1,0 +1,30 @@
+.container
+  .row
+    .col-md-12
+      .panel.panel-primary
+        .panel-heading
+          span CBR Files
+        /.panel-body
+          /ul.list-group
+            /- @chapters.each do |chapter|
+              /li.list-group-item
+                /= chapter.manga.title
+                /= link_to chapter_path(chapter) do
+                  /= File.basename chapter.filename
+        .panel-body
+          ul.list-group
+            - @mangas.each do |manga|
+              strong
+                = link_to manga.title, manga_path(manga)
+              br
+                - manga.chapters.each do |chapter|
+                  li.list-group-item
+                    = link_to chapter_path(chapter) do
+                      = File.basename chapter.filename
+
+        .panel-footer
+          .row
+            .col-md-9
+              h6 = page_entries_info @mangas
+            .col-md-3.pull-right
+              = paginate @mangas
