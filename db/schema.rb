@@ -12,14 +12,17 @@
 
 ActiveRecord::Schema.define(version: 20170206062548) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "chapters", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "filename"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "manga_id"
-    t.index ["manga_id"], name: "index_chapters_on_manga_id"
-    t.index ["user_id"], name: "index_chapters_on_user_id"
+    t.index ["manga_id"], name: "index_chapters_on_manga_id", using: :btree
+    t.index ["user_id"], name: "index_chapters_on_user_id", using: :btree
   end
 
   create_table "mangas", force: :cascade do |t|
@@ -28,7 +31,7 @@ ActiveRecord::Schema.define(version: 20170206062548) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_mangas_on_user_id"
+    t.index ["user_id"], name: "index_mangas_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,8 +47,11 @@ ActiveRecord::Schema.define(version: 20170206062548) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "chapters", "mangas"
+  add_foreign_key "chapters", "users"
+  add_foreign_key "mangas", "users"
 end
