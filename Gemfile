@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.6'
+ruby '2.3.3'
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -44,6 +44,9 @@ gem 'nokogiri', '~> 1.6', '>= 1.6.8'
 gem 'rubyzip', '~> 1.2'
 gem 'sidekiq'
 gem 'kaminari'
+
+gem 'thin'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
