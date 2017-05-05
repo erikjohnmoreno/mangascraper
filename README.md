@@ -24,4 +24,13 @@ Things you may want to cover:
 * ...
 # mangascraper
 
+Instructions:
 
+1. <code>bundle</code> 
+   If you don't have bundle try installing it first <code>gem install bundle</code>
+
+2. Install redis <code>brew install redis</code>
+
+3. Run <code>sidekiq</code>
+
+4. Start your server <code>rails s</code>
