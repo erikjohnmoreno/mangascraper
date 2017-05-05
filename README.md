@@ -26,11 +26,13 @@ Things you may want to cover:
 
 Instructions:
 
-1. <code>bundle</code> 
+1. Run <code>bundle</code> <br>
    If you don't have bundle try installing it first <code>gem install bundle</code>
 
 2. Install redis <code>brew install redis</code>
 
-3. Run <code>sidekiq</code>
+3. Run <code>redis-server</code>
 
-4. Start your server <code>rails s</code>
+4. Run <code>sidekiq</code>
+
+5. Start your server <code>rails s</code>
