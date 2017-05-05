@@ -16,7 +16,8 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-/app/assets/*
+app/assets/*
+dump.rdb
 
 # Ignore Byebug command history file.
 .byebug_history
